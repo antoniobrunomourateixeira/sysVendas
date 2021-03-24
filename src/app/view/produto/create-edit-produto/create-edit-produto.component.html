@@ -1,0 +1,35 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <div class="row mb-2">
+                    <h3 class="m-0 ml-2"> <b>{{acao}} Cliente</b></h3>
+                </div>
+                <form [formGroup]="formProduto">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Nome" type="text" formControlName="nome" required>
+                            </mat-form-field>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Valor" type="text" formControlName="valor" required>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 text-right">
+                            <a mat-raised-button color="default" [routerLink]="['/view/produto']">Cancelar</a>
+                            <button class="btn btn-success ml-2" (click)="salvar()" [disabled]="formProduto.invalid"> Salvar </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

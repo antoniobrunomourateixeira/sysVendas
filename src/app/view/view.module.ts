@@ -15,12 +15,13 @@ import {MatSelectModule} from '@angular/material/select';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateEditProdutoComponent } from './produto/create-edit-produto/create-edit-produto.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 
 @NgModule({
-  declarations: [ClienteComponent, ProdutoComponent, VendaComponent, CreateEditClienteComponent],
+  declarations: [ClienteComponent, ProdutoComponent, VendaComponent, CreateEditClienteComponent, CreateEditProdutoComponent],
   imports: [
     CommonModule,
     FormsModule,
