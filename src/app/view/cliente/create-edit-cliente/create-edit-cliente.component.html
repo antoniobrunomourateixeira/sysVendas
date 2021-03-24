@@ -1,0 +1,96 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <div class="row mb-2">
+                    <h3 class="m-0 ml-2"> <b>{{acao}} Cliente</b></h3>
+                </div>
+                <form [formGroup]="formCLiente">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Nome" type="text" formControlName="nome" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="CPF" type="text" formControlName="cpf"
+                                    mask="000.000.000-00" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-3">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="CEP" type="text" formControlName="cep" required (blur)="preencherEndereco()">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-7">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Logradouro" type="text" formControlName="logradouro" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-2">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Número" type="text" formControlName="numero" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-3">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Bairro" type="text" formControlName="bairro" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Complemento" type="text" formControlName="complemento">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-3">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Cidade" type="text" formControlName="cidade" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-2">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>UF</mat-label>
+                                <mat-select name="food" formControlName="estado">
+                                  <mat-option *ngFor="let food of UF" [value]="food.sigla">
+                                    {{food.nome}}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+
+                            <!-- <mat-form-field class="example-full-width">
+                                
+                                <mat-label>UF</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let item of UF" [value]="item.sigla" >
+                                        {{item.nome}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field> -->
+                        </div>
+                        <div class="col-md-8">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Email" type="text" formControlName="email">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Data Nascimento" type="text"
+                                    formControlName="dataNascimento" mask="00/00/0000">
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 text-right">
+                            <a mat-raised-button color="default" [routerLink]="['/view/cliente']">Cancelar</a>
+                            <button class="btn btn-success ml-2" (click)="salvar()" [disabled]="formCLiente.invalid"> Salvar </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <button class="btn btn-outline-primary">NOVO CLIENTE</button> -->
+                <a mat-raised-button color="primary" [routerLink]="['/view/cadastrarCliente']">NOVO CLIENTE</a>
+                <!-- <button mat-raised-button color="primary" (click)="openDialog()">NOVO CLIENTE</button> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body" style="padding: 0px 5px 0px 5px;">
+                        <div class="table-responsive">
+                            <table class="table" style="white-space: nowrap;">
+                                <thead class=" text-primary">
+                                    <th> ID </th>
+                                    <th> Nome </th>
+                                    <th> CPF </th>
+                                    <th> Endereço </th>
+                                    <th> Email </th>
+                                    <th> Data Nascimento </th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of listaClientes; let i = index">
+                                        <td> {{item.key}} </td>
+                                        <td> {{item.cliente.nome}} </td>
+                                        <td> {{item.cliente.cpf | mask:"000.000.000-00"}} </td>
+                                        <td> {{item.cliente.cep}} - {{item.cliente.logradouro}} {{item.cliente.numero}}, {{item.cliente.complemento}}, {{item.cliente.bairro}} - {{item.cliente.cidade}} </td>
+                                        <td> {{item.cliente.email}} </td>
+                                        <td> {{item.cliente.dataNascimento}} </td>
+                                        <td>
+                                            <a [routerLink]="['/view/editarCliente', item.key]"> <i class="material-icons">mode_edit_outline</i> </a>
+                                            
+                                            <i class="material-icons" (click)="delete(item.key)" >delete</i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
