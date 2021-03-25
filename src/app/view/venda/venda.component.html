@@ -1,5 +1,35 @@
 <div class="main-content">
     <div class="container-fluid">
-        <p>cliente works!</p>
+        <div class="row">
+            <div class="col-md-12">
+                <a mat-raised-button color="primary" [routerLink]="['/view/novaVenda']">NOVO VENDA</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body" style="padding: 0px 5px 0px 5px;">
+                        <div class="table-responsive">
+                            <table class="table" style="white-space: nowrap;">
+                                <thead class=" text-primary">
+                                    <th> ID </th>
+                                    <th> Data </th>
+                                    <th> Cliente </th>
+                                    <th class="text-right"> Total </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of listaVendas">
+                                        <td> {{item.key}} </td>
+                                        <td>{{item.venda.data_hora | date}}</td>
+                                        <td>{{item.venda.nome_cliente}}</td>
+                                        <td class="text-right"> {{item.venda.valor_total | currency: 'BRL'}} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

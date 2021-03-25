@@ -16,12 +16,16 @@ import {MatSelectModule} from '@angular/material/select';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateEditProdutoComponent } from './produto/create-edit-produto/create-edit-produto.component';
+import { NgxCurrencyModule } from "ngx-currency";
+import { NovaVendaComponent } from './venda/nova-venda/nova-venda.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 
 @NgModule({
-  declarations: [ClienteComponent, ProdutoComponent, VendaComponent, CreateEditClienteComponent, CreateEditProdutoComponent],
+  declarations: [ClienteComponent, ProdutoComponent, VendaComponent, CreateEditClienteComponent, CreateEditProdutoComponent, NovaVendaComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -32,6 +36,9 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatDialogModule,
     MatInputModule,
     MatSelectModule,
+    MatIconModule,
+    MatTooltipModule,
+    NgxCurrencyModule,
     NgxMaskModule.forRoot(),
   ]
 })

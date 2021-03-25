@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RetornoVenda } from 'app/shared/model/Retornos/RetornoVenda';
+import { VendaService } from 'app/shared/services/venda.service';
 
 @Component({
   selector: 'app-venda',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./venda.component.css']
 })
 export class VendaComponent implements OnInit {
-
-  constructor() { }
+  public listaVendas = [];
+  constructor(
+    private _service: VendaService
+  ) { }
 
   ngOnInit(): void {
+    this.getVendas();
+  }
+
+  public getVendas() {
+    this._service.getAll().subscribe(res => {
+      this.listaVendas = res;
+    })
   }
 
 }

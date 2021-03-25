@@ -15,7 +15,8 @@
                         
                         <div class="col-md-4">
                             <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Valor" type="text" formControlName="valor" required>
+                                <input matInput placeholder="Valor" type="text" formControlName="valor" required
+                                currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
                             </mat-form-field>
                         </div>
 
