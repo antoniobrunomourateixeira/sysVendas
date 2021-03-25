@@ -10,3 +10,7 @@ Projeto Angular utilizando como base de dados o NoSQL Firebase
 - Cadastro/Edição/Exclusão de Clientes
 - Cadastro/Edição/Exclusão de Produos
 - Inclusão e Listagme de Venda
+
+### Execução
+- npm install (para instalar pacotes)
+- ng serve -o (rodar aplicação)
